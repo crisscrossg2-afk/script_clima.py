@@ -15,5 +15,5 @@ jobs:
           python-version: '3.9'
       - run: pip install requests
       - env:
-          FB_TOKEN: ${{ secrets.EAA7XFZC1ikewBQZCWzCaRBhsk4ENJPYIYLoiOBL9dToka1ZCZAVaS0QE5ZAqCCBciVXomHjbzZAjZAKFZBJFWwsZBflFXeXJZCtLVdikZCS3p5NpOyTicYu8Uy8fSczg1ZCsG0hVdriiZA1OJ13eaZASjjzJFWw3DgcJZBNEWALFzCF5ywlB28E7pJplasqgyfmQYaCXYwjqkqUSsavcOLsZA1fWLqvx73VNDnlz43c9PmSCsiAZD }}
+          FB_TOKEN: ${{ secrets.EAA7XFZC1ikewBQ6gw93ZBVWDBQQw5CpoNDKJkDXwepEA5tH6bFDQPrlgniIyO3eV4BZBWuxfgzxVmZAqM64eMwZAfAwuKCEHRRKso4vlJMQCVV4yvhSKSyE4sCdNWzZCTNvWZBbhA1KciZACOj9Qrl750kl3lWhNuhgNz13EXZCr9vYZAQqqA9ZCRApkfl3nf3LzXBktc2c4LFe0cp5WsYrufm30z8YWFd3H1LnoH9uYfmuzHoZD}}
         run: python script_clima.py
