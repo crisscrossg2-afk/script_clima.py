@@ -1,0 +1,19 @@
+name: Publicacion_Horaria_Facebook
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Se ejecuta al minuto 0 de cada hora
+  workflow_dispatch:      # Botón para probarlo manualmente
+
+jobs:
+  publicar_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - run: pip install requests
+      - env:
+          FB_TOKEN: ${{ secrets.EAA7XFZC1ikewBQZCWzCaRBhsk4ENJPYIYLoiOBL9dToka1ZCZAVaS0QE5ZAqCCBciVXomHjbzZAjZAKFZBJFWwsZBflFXeXJZCtLVdikZCS3p5NpOyTicYu8Uy8fSczg1ZCsG0hVdriiZA1OJ13eaZASjjzJFWw3DgcJZBNEWALFzCF5ywlB28E7pJplasqgyfmQYaCXYwjqkqUSsavcOLsZA1fWLqvx73VNDnlz43c9PmSCsiAZD }}
+        run: python script_clima.py
