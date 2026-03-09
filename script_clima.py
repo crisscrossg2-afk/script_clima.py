@@ -2,26 +2,32 @@ import requests
 import os
 
 def publicar():
-    # 1. Configuración (El token lo sacaremos de los Secretos de GitHub)
-    token = os.getenv("EAA7XFZC1ikewBQZCWzCaRBhsk4ENJPYIYLoiOBL9dToka1ZCZAVaS0QE5ZAqCCBciVXomHjbzZAjZAKFZBJFWwsZBflFXeXJZCtLVdikZCS3p5NpOyTicYu8Uy8fSczg1ZCsG0hVdriiZA1OJ13eaZASjjzJFWw3DgcJZBNEWALFzCF5ywlB28E7pJplasqgyfmQYaCXYwjqkqUSsavcOLsZA1fWLqvx73VNDnlz43c9PmSCsiAZD")
-    page_id = "1012912958570750"
-    estacion = "IOZUMB2"
+    # GitHub lee el secreto que guardaste en Settings
+    token = os.getenv("EAA7XFZC1ikewBQys1skMSD6UsdZBdcOabwcqQ6uMrCjEJQ72T7okNwwlAIZC7B1kEZARt7T5ZBhPtKlhZBdhGQj7TwEPZAFlbuloaB9xENaHDOQbqf4ZBsgTXZApwEjZBuO3QvPOP3IcuT0HiNrVLZBKXFxQzahBdkv0TAA5UkO5PxP3rHRApDUIG4bYQhusygMku3qXf39IRNDUhBKaCZBBU0wgwrYYZALOgfQxZCrRDHkpObEo9B") 
     
-    # 2. Mensaje que se publicará (puedes personalizarlo)
-    # Nota: Si no tienes API Key, enviamos el link directo para evitar el error de "post vacío"
+    # Tu ID de página (sin comillas extras en la URL abajo)
+    page_id = "1012912958570750"
+    
     mensaje = (
-        f"🌤️ Reporte Meteorológico Ozumba ({estacion})\n"
-        f"Sigue el clima en tiempo real aquí: "
-        f"https://www.wunderground.com/dashboard/pws/IOZUMB2/graph/2026-01-20/2026-01-20/monthly"
-        f"📅 Actualizado automáticamente cada hora."
+        "📊 Reporte Meteorológico Ozumba\n"
+        "Estación: IOZUMB2\n"
+        "Consulta en vivo: https://www.wunderground.com/dashboard/pws/IOZUMB2\n"
+        "🕒 Actualización horaria automática."
     )
 
-    # 3. Petición POST a Facebook
-    url = f"https://graph.facebook.com/v21.0/{1012912958570750}/feed"
-    payload = {'message': mensaje, 'access_token': token}
+    # REVISA ESTA LÍNEA: No debe tener comillas dentro de las llaves ni al final de feed
+    url = f"https://graph.facebook.com/v21.0/1012912958570750/feed"
     
-    r = requests.post(url, data=payload)
-    print(f"Respuesta de Facebook: {r.text}")
+    payload = {
+        'message': mensaje,
+        'access_token': token
+    }
+    
+    # Realizar la publicación
+    response = requests.post(url, data=payload)
+    
+    # Esto te confirmará el éxito en la pestaña Actions
+    print(f"Respuesta de Facebook: {response.text}")
 
 if __name__ == "__main__":
     publicar()
