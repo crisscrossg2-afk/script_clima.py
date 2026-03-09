@@ -3,7 +3,7 @@ import os
 
 def publicar():
     # GitHub lee el secreto que guardaste en Settings
-    token = os.getenv("EAA7XFZC1ikewBQys1skMSD6UsdZBdcOabwcqQ6uMrCjEJQ72T7okNwwlAIZC7B1kEZARt7T5ZBhPtKlhZBdhGQj7TwEPZAFlbuloaB9xENaHDOQbqf4ZBsgTXZApwEjZBuO3QvPOP3IcuT0HiNrVLZBKXFxQzahBdkv0TAA5UkO5PxP3rHRApDUIG4bYQhusygMku3qXf39IRNDUhBKaCZBBU0wgwrYYZALOgfQxZCrRDHkpObEo9B") 
+    token = os.getenv("EAA7XFZC1ikewBQ6gw93ZBVWDBQQw5CpoNDKJkDXwepEA5tH6bFDQPrlgniIyO3eV4BZBWuxfgzxVmZAqM64eMwZAfAwuKCEHRRKso4vlJMQCVV4yvhSKSyE4sCdNWzZCTNvWZBbhA1KciZACOj9Qrl750kl3lWhNuhgNz13EXZCr9vYZAQqqA9ZCRApkfl3nf3LzXBktc2c4LFe0cp5WsYrufm30z8YWFd3H1LnoH9uYfmuzHoZD") 
     
     # Tu ID de página (sin comillas extras en la URL abajo)
     page_id = "1012912958570750"
